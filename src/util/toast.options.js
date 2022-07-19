@@ -1,0 +1,9 @@
+export const ERROR_TOAST = { position: 'bottom-right', type: 'error' }
+export const BOOK_TOAST = { position: "top-center", type: "info" }
+export const CATEGORY_TOAST = { position: "top-center" }
+export const BOOK_SUCCESS_TOAST = { position: "top-center", type: "success" }
+export const ACCOUNT_UPDATED_TOAST = { position: "top-center", type: "success" }
+export const ACCOUNT_ERROR_TOAST = { position: "top-center", type: "error" }
+export const ACTION_STEP_TOAST = { position: "bottom-right", type: "info" }
+export const ACTION_DISCARTED = { position: "top-center", type: "warning" }
+export const CONFIRM_WINDOW_TOAST = { position: "top-center", type: "warning", autoClose: false, closeOnClick: false, closeButton: false, draggable: false }

@@ -1,13 +1,129 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Toastify__toast-theme--light {
+  @apply shadow-3xl;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #110426;
+  background: linear-gradient(
+    25deg,
+    rgba(17, 4, 38, 1) 24%,
+    rgba(86, 191, 107, 1) 100%
+  );
+  background-attachment: fixed;
+  @apply font-display;
+  @apply text-white;
+}
+
+.btn {
+  @apply font-medium;
+  @apply py-4 px-28;
+  @apply rounded-2xl;
+  @apply transition-colors;
+  width: fit-content;
+}
+
+.btn.btn-primary {
+  @apply bg-primary;
+  @apply shadow-xl shadow-primary/40;
+}
+.btn.btn-primary:hover {
+  @apply bg-primary-saturated;
+}
+
+.brand-title {
+  @apply font-extrabold;
+  @apply text-4xl md:text-5xl xl:text-7xl;
+}
+
+.form-control {
+  @apply flex flex-col gap-2 mb-6;
+}
+
+.form-control input {
+  @apply bg-transparent outline-none border-b border-gray-400/50 text-gray-400 pb-1 font-normal;
+}
+
+.form-control textarea {
+  @apply bg-transparent outline-none border-b border-gray-400/50 text-gray-400 pb-1 font-normal;
+  resize: none;
+}
+
+::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.form-control select {
+  appearance: none;
+  @apply bg-black/20 py-1 w-full cursor-pointer rounded-md outline-none text-gray-400 font-normal;
+}
+
+.form-control option {
+  @apply bg-white text-gray-800;
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 10px 20px theme("colors.primary");
+  }
+}
+
+/* FOOTER */
+
+.footer ul li {
+  @apply my-10 text-sm cursor-pointer transform transition-transform hover:translate-x-2;
+}
+
+.footer .grid div {
+  @apply ml-44;
+}
+
+.footer ul li i {
+  @apply text-xl;
+}
+
+.footer ul li:first-child {
+  @apply mt-0 text-base font-medium transform-none;
+}
+
+/* TABLE */
+
+table {
+  border-collapse: collapse;
+}
+
+table tbody {
+  @apply border-t border-dashed border-gray-400/25;
+}
+
+table thead tr th {
+  @apply py-2 px-2 border-r border-dashed border-gray-400/25;
+}
+
+table tbody tr {
+  @apply border-b border-dashed border-gray-400/25;
+}
+
+table tbody tr td {
+  @apply pl-3 py-0.5 border-r border-dashed border-gray-400/25;
+}
+
+/* CUSTOM SCROLLBAR */
+
+.scroll::-webkit-scrollbar {
+  background: transparent;
+  width: 15px;
+}
+.scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  @apply bg-primary/40;
 }
